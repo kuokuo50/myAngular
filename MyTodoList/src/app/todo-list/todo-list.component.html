@@ -1,0 +1,72 @@
+<section class="todoapp">
+
+  <header class="header">
+	<h1>todos</h1>
+    <input
+      class="new-todo"
+      placeholder="What needs to be done?"
+      autofocus
+      (keyup.enter)="addTodo($event.target)"
+    >
+  </header>
+
+  <!-- 清單區域開始 -->
+  <section class="main" *ngIf="getList().length">
+
+    <ul class="todo-list">
+      <li
+        *ngFor="let todo of getList(); let i=index"
+        [class.completed]="todo.done"
+        [class.editing]="todo.editing"
+      >
+        <div class="view">
+          <input class="toggle" type="checkbox" (click)="todo.toggleCompletion()" [checked]="todo.done">
+          <label (dblclick)="edit(todo)">{{ todo.getTitle() }}</label>
+          <button class="destroy" (click)="remove(i)"></button>
+        </div>
+
+        <input
+          class="edit"
+          #editedtodo
+          *ngIf="todo.editing"
+          [value]="todo.getTitle()"
+          (blur)="update(todo, editedtodo.value)"
+          (keyup.enter)="update(todo, editedtodo.value)"
+          (keyup.escape)="cancelEditing(todo)"
+        >
+      </li>
+    </ul>
+
+  </section>
+  <!-- 清單區域結束 -->
+
+  <footer class="footer">
+      <span class="todo-count">
+        <strong>{{ getRemainingList().length }}</strong>
+        {{ getRemainingList().length > 1 ? 'items' : 'item'}} left
+      </span>
+
+      <!-- 待辦事項狀態的列舉 -->
+      <ul class="filters">
+        <li *ngFor="let todoStatusTitle of getTodoStatusTypeOptions(); let i=index">
+          <a
+           href="javascript:;"
+           [class.selected]="checkStatus(i)"
+           (click)="setStatus(i)"
+          >
+            {{todoStatusTitle}}
+          </a>
+        </li>
+      </ul>
+
+      <button
+        class="clear-completed"
+        *ngIf="getCompletedList().length"
+        (click)="removeCompleted()"
+      >
+        Clear {{getCompletedList().length}} completed {{ getCompletedList().length > 1 ? 'items' : 'item'}}
+      </button>
+
+  </footer>
+
+</section>
