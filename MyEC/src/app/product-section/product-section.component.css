@@ -57,44 +57,44 @@
 
 /* 商品區域 */
 
-.container article {
+.container article /deep/ {
   width: 620px;
   padding: 0px;
 }
 
-.container article .item-list {
+.container article /deep/ .item-list {
   overflow: hidden;
 }
 
-.container article .choice-item {
+.container article /deep/ .choice-item {
   margin-bottom: 20px;
 }
 
-.container article .choice-item:nth-child(2n+1) {
-  margin-right: 20px;
+.container article /deep/ .choice-item:nth-child(2n+1) {
+  /*margin-right: 20px;*/
 }
 
-.container article .choice-item:first-child .img {
+.container article /deep/ .choice-item:first-child .img {
   background-image: url(/assets/images/others/brenda-godinez-228182-unsplash.jpg);
 }
 
-.container article .choice-item:nth-child(2) .img {
+.container article /deep/ .choice-item:nth-child(2) .img {
   background-image: url(/assets/images/others/heather-schwartz-493946-unsplash.jpg);
 }
 
-.container article .choice-item:nth-child(3) .img {
+.container article /deep/ .choice-item:nth-child(3) .img {
   background-image: url(/assets/images/others/brooke-lark-96398-unsplash.jpg);
 }
 
-.container article .choice-item:nth-child(4) .img {
+.container article /deep/ .choice-item:nth-child(4) .img {
   background-image: url(/assets/images/others/food-photographer-jennifer-pallian-137621-unsplash.jpg);
 }
 
-.container article .choice-item:nth-child(5) .img {
+.container article /deep/ .choice-item:nth-child(5) .img {
   background-image: url(/assets/images/others/food-photographer-jennifer-pallian-650641-unsplash.jpg);
 }
 
-.container article .choice-item:last-child .img {
+.container article /deep/ .choice-item:last-child .img {
   background-image: url(/assets/images/others/food-photographer-jennifer-pallian-306895-unsplash.jpg);
 }
 
@@ -159,7 +159,7 @@
   }
 
   .container aside,
-  .container article {
+  .container article /deep/ {
     float: none;
   }
 
@@ -169,15 +169,15 @@
     margin-bottom: 30px;
   }
 
-  .container article {
+  .container article /deep/ {
     width: 100%;
   }
 
-  .container article .item-list {
+  .container article /deep/ .item-list {
     padding: 0px 30px;
   }
 
-  .container article .choice-item {
+  .container article /deep/ .choice-item {
     margin-bottom: 30px;
   }
 

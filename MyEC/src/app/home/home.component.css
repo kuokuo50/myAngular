@@ -153,7 +153,7 @@ article .no-why img {
 
 article .today-choice {
   margin-bottom: 60px;
-  height: 436px;
+  /*height: 436px;*/
 }
 
 .choice-item:nth-child(2) {
@@ -279,5 +279,5 @@ app-product-item {
 }
 
 app-product-item:nth-child(2) {
-  margin: 0px 20px;
+  /*margin: 0px 20px;*/
 }

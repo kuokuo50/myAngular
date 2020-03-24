@@ -1,1 +1,23 @@
-<p>product-list works!</p>
+  <div class="item-list">
+
+    <!-- 精選商品區域開始 -->
+    <section class="today-choice">
+
+      <section class="today-choice">
+        <app-product-item *ngFor="let item of products" [product]="item"></app-product-item>
+      </section>
+  
+    </section>
+    <!-- 精選商品區域開始 -->
+
+  </div>
+
+  <div class="pagination">
+    <ul class="font-dark-green">
+      <li><i class="material-icons">arrow_left</i></li>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li><i class="material-icons">arrow_right</i></li>
+    </ul>
+  </div>

@@ -57,7 +57,7 @@
   <section class="today-choice">
 
     <section class="today-choice">
-      <app-product-item *ngFor="let item of [1, 2, 3]"></app-product-item>
+      <app-product-item *ngFor="let item of products" [product]="item" ></app-product-item>
     </section>
 
   </section>
