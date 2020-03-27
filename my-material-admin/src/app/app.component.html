@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="sideNav.toggle()">
+    <mat-icon>{{ sideNav.opened ? 'close' : 'menu' }}</mat-icon>
+  </button>
+  <span>IT鐵人賽－Angular Material Demo</span>
+
+  <!-- 在這之後的都會被推到右邊去 -->
+  <span class="toolbar-seprator"></span>
+
+  <button mat-icon-button>
+    <mat-icon>message</mat-icon>
+  </button>
+  <button mat-icon-button>
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container class="demo-app-container">
+  <mat-sidenav #sideNav mode="push" disableClose>
+    <mat-nav-list>
+      <mat-list-item><a [routerLink]="['/', 'survey']" mat-list-item>問卷調查</a></mat-list-item>
+      <mat-list-item><a [routerLink]="['/', 'blog']" mat-list-item>部落格</a></mat-list-item>
+      <mat-list-item><a [routerLink]="['/', 'inbox']" mat-list-item>收件夾</a></mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
